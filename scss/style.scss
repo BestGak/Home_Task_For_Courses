@@ -1,0 +1,29 @@
+@import '../scss/reset.scss';
+.mainHTML{
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 12.5% 12.5%, #ff71fc 0, #ff6cfc 12.5%, #ff66f6 25%, #eb5fea 37.5%, #be55d8 50%, #924bc3 62.5%, #6b42b0 75%, #453a9f 87.5%, #17348f 100%);
+  & a{
+    text-decoration: none;
+    color: aquamarine;
+    font-size: 20px;
+    
+  }
+  & ul{
+    max-width: 1110px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 150px;
+    border: 1px solid rgb(123, 52, 151);
+  }
+  & li{
+    list-style: none;
+    margin: 30px 30px;
+
+  }
+}
+.main__title{
+  text-align: center;
+  color: aquamarine;
+
+}
