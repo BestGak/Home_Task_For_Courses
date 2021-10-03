@@ -27,24 +27,33 @@ const randomInteger = (min, max) => {
 
 const countLetter = (phrase = "пустота", letters = "") => {
   const phraseArr = phrase.toLowerCase().split("");
-  const countLetter = phraseArr.filter(function (letter) {
-    return letter == letters;
+  const countLetter = phraseArr.filter((letter) => {
+    return letter === letters;
   }).length;
   return countLetter;
 };
 
 const convertCurrency = (moneyValue) => {
-  const value = moneyValue.split("");
-  if (value[value.length - 1] === "$") {
-    return value.slice(0, -1).join("") * 25 + " UAH";
-  } else if (
-    value.slice(-3).join("") === "UAH" ||
-    value.slice(-3).join("") === "uah"
-  ) {
-    return value.slice(0, -3).join("") / 25 + " $";
-  } else if (value != "$" || value != "H" || value != "h") {
-    return "Другие валюты не конвертируются, введите UAH , $";
+ 
+  let value = moneyValue.toLowerCase();
+  if(value.includes('$')) {
+    return parseInt(value) * 25 + 'грн'
+  } else if(value.includes('uah') || value.includes('UAH')) {
+    return parseInt(value) / 25 + '$'
+  } else {
+    return 'Вы ввели не правильную валюту'
   }
+   // const value = moneyValue.split("");
+  // if (value[value.length - 1] === "$") {
+  //   return value.slice(0, -1).join("") * 25 + " UAH";
+  // } else if (
+  //   value.slice(-3).join("") === "UAH" ||
+  //   value.slice(-3).join("") === "uah"
+  // ) {
+  //   return value.slice(0, -3).join("") / 25 + " $";
+  // } else if (value != "$" || value != "H" || value != "h") {
+  //   return "Другие валюты не конвертируются, введите UAH , $";
+  // }
 };
 
 const getRandomPassword = (numPassword = 8) => {
@@ -58,7 +67,7 @@ const getRandomPassword = (numPassword = 8) => {
 
 const deleteLetters = (deleteLetter, sentence) => {
   const arrLetters = sentence.split("");
-  const arrLetter = arrLetters.filter(function (letter) {
+  const arrLetter = arrLetters.filter((letter) => {
     return letter !== deleteLetter;
   });
   return arrLetter.join("");
