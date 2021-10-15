@@ -5,9 +5,9 @@ const themes = [
   "Алгоритми і структури даних",
 ];
 const marks = [4, 5, 5, 3, 4, 5];
-const getRandomInt = (max) => Math.floor(Math.random() * max);
+const getRandomInt = (max) => Math.floor(Math.random() * max + 1);
 
-const studentsArr = (arrWithStudents) => {
+const createStudentsArr = (arrWithStudents) => {
   const girls = [];
   const men = [];
   const pares = [];
@@ -27,9 +27,9 @@ const studentsArr = (arrWithStudents) => {
   return pares;
 };
 
-const arrPares = studentsArr(students);
+const arrPares = createStudentsArr(students);
 
-const paresTheme = (pares, theme) => {
+const createParesWithTheme = (pares, theme) => {
   let paresWithTheme = [];
   for (let i = 0; i < theme.length; i++) {
     paresWithTheme.push([pares[i].join(" i "), theme[i]]);
@@ -37,9 +37,9 @@ const paresTheme = (pares, theme) => {
   return paresWithTheme;
 };
 
-const arrParesWithTheme = paresTheme(arrPares, themes);
+const arrParesWithTheme = createParesWithTheme(arrPares, themes);
 
-const marksStudents = (arrStudents, arrMarks) => {
+const getMarksStudents = (arrStudents, arrMarks) => {
   const arrWithMarks = [];
   for (let i = 0; i < marks.length; i++) {
     arrWithMarks.push([arrStudents[i], arrMarks[i]]);
@@ -47,7 +47,7 @@ const marksStudents = (arrStudents, arrMarks) => {
   return arrWithMarks;
 };
 
-const randomMarks = (arrWithStudentsAndTheme) => {
+const getRandomMark = (arrWithStudentsAndTheme) => {
   let arrWithAllInforamtion = [];
   for (let i = 0; i < arrWithStudentsAndTheme.length; i++) {
     arrWithAllInforamtion.push(arrWithStudentsAndTheme[i].concat(getRandomInt(5)));
@@ -56,7 +56,7 @@ const randomMarks = (arrWithStudentsAndTheme) => {
   return arrWithAllInforamtion;
 };
 
-console.log(studentsArr(students));
-console.log(paresTheme(arrPares, themes));
-console.log(marksStudents(students, marks));
-console.log(randomMarks(arrParesWithTheme));
+console.log(createStudentsArr(students));
+console.log(createParesWithTheme(arrPares, themes));
+console.log(getMarksStudents(students, marks));
+console.log(getRandomMark(arrParesWithTheme));
