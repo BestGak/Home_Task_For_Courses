@@ -1,0 +1,116 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+body {
+    background: #152095;
+    overflow: hidden;
+}
+
+.post__block {
+    background-color: #15202b;
+    max-width: 960px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 15px;
+    border: 1px solid #fff
+}
+
+.post__aboutDescription {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.post__photo {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.post__description {
+  display: flex;
+  align-items: center;
+}
+
+.post__me {
+  width: 100%;
+  padding: 0 50px;
+  border-radius: 700px;
+}
+
+.post__name {
+  font-weight: 700;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.post__nickname {
+  color: #fff;
+  opacity: .7;
+  margin-right: 15px;
+  font-size: 1.2em;
+}
+
+.post__date {
+  color: #fff;
+  opacity: .7;
+}
+
+.post__description {
+  color: #fff;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 500px) {
+  .post__name {
+    font-size: 1em;
+  }
+  .post__nickname , .post__date{
+    font-size: 0.8em;
+    margin-right: 5px;
+  }
+  .post__description {
+    font-size: 1em;
+  }
+}
