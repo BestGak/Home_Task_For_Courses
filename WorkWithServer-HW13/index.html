@@ -1,15 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
 <body>
-  <div id="list"></div>
-  <button id="btnLoad">click here</button>
-  <script src="./main.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background: url(./tndJrpwuU3fCIdr8TlJxWSCZ.webp) center center / cover no-repeat;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left {
+            width: 30%;
+        }
+        .right {
+            width: 60%;
+        }
+        .quotes {
+            color: #fff;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 90vh;
+            display: flex;
+            overflow-x: auto;
+           
+            margin-bottom: 50px;
+        }
+        .persons {
+            display: flex;
+            flex-direction: column;
+            background-color: grey;
+            border-radius: 10px;
+            margin: 10px 10px 0px 0px;
+            justify-content: space-between;
+            padding: 10px;
+            width: 41%;
+        }
+
+        h3 , .right  h3{
+            color: hotpink;
+            font-weight: 700;
+        }
+
+        #show_details {
+            margin-bottom: 25px;
+            height: 20px;
+
+        }
+        .planets {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 90vh;
+            overflow-x: auto;
+        }
+        .planets__block {
+            width: 40%;
+            padding: 10px;
+            background: grey;
+            border-radius: 20px;
+            margin: 0px 15px 15px 0px;
+        }
+       .planets__name {
+           color: #fff;
+       }
+       #prev__planet , #next__planet {
+           margin-bottom: 30px;
+           display: inline;
+           width: 45%;
+       }
+       @media screen and (max-width:767px) {
+           .planets__block {
+               width: 100%;
+               margin: 0px 0px 10px;
+           }
+           .persons {
+               width: 100%;
+               margin: 0px 0px 10px 0px;
+           }
+           .left , .right {
+               width: 47%;
+           }
+       }
+    </style>
+    <div class="container">
+    <div class="left">
+        <button id="show_details">Show hero</button>
+        <div class="quotes"></div>
+    </div>
+   
+    <div class="right">
+        <button id="prev__planet">Prev</button>
+        <button id="next__planet">Next</button>
+        <div class="planets">
+    
+        </div>
+    </div>
+</div>
+  
+    <script src="./main.js"></script>
 </body>
+
 </html>
